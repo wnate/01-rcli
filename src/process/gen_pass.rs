@@ -11,7 +11,7 @@ pub fn generate_password(
     use anyhow::anyhow;
     use rand::seq::SliceRandom;
 
-    let mut rng = rand::thread_rng();
+    let mut rng: rand::prelude::ThreadRng = rand::thread_rng();
     let mut charset = Vec::new();
     let mut password = Vec::with_capacity(length as usize);
 
