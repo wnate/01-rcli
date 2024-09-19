@@ -20,10 +20,10 @@ repos:
       - id: cargo-fmt
         name: cargo fmt
         description: Format files with rustfmt.
-        entry: bash -c 'cargo fmt -- --check'
+        entry: bash -c 'cargo fmt && git add -u'
         language: rust
         files: \.rs$
-        args: []
+        pass_filenames: false
       - id: cargo-deny
         name: cargo deny check
         description: Check cargo dependencies
